@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kelvingrove</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="./src/css/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Kelvingrove">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+</head>
+<style>
+    body {
+
+        color: #545454;
+        background: #F7F7F7;
+    }
+</style>
+
+<body>
+<div id="app">
+    <nav style="background-color: #3f51b5;" class="navbar navbar-expand-md fixed-top">
+        <img class="img-fluid" height="40px" width="40px" src="src/images/index/kelvingroveicon.png">   <a style="color: white;" class="navbar-brand" href="index.html">	&nbsp; Kelvingrove Park</a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link" href="activities.html">Activities</a>
+                </li>
+                <li  class="nav-item">
+                    <a style="color: white;" class="nav-link" href="events.html">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="walk.html">Walks</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="news.html">News</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="help.html">Contact Us</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="divID1">
+                <button style="color: white;" class="btn btn-outline-secondary my-2 my-sm-0" type="button" onclick="findInPage();">Search</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+        <main class="container">
+
+            <h3>Monument Walk
+            </h3>
+            <hr class="featurette-divider">
+
+
+
+                <div id="map"></div>
+
+            <div class="card h4">
+               <div class="card-body">
+                   <div id="container">
+                   <div id="featureImage">
+                Take a scenic walk around Kelvingrove and discover historic monuments on your journey
+                   </div>
+                       <div id="featureTitle">
+                       </div>
+                   </div>
+               </div>
+            </div>
+
+                <div class="card h5">
+                <div class="card-body">
+                    <div id="moreInfo">
+                    Click a marker to find out more information
+                </div>
+                </div>
+                </div>
+
+
+            <style>
+                #map {
+                    height: 425px;
+                }
+                /* Optional: Makes the sample page fill the window. */
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+            </style>
+
+
+            <!-- /.row -->
+
+        </main>
+    </div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+</body>
+</html>
+
+<script>
+    //built upon from web design module
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat:  55.869716465024986, lng: -4.28255318627193},
+            zoom: 16
+        });
+        var results= map.data.loadGeoJson('map.json');
+        var info = new google.maps.InfoWindow();
+   // when user clicks
+        map.data.addListener('click', function(event) {
+            // get the description
+            var monumentName = event.feature.getProperty("name");
+            info.setContent("<div style='width:150px; text-align: center;'>"+monumentName+"</div>");
+            //set the position of the info window to the current point on the map
+            info.setPosition(event.feature.getGeometry().get());
+            info.open(map);
+            function image_function(src, height, width) {
+                var img = document.createElement("img");
+                img.src  = src;
+                img.className += "img-fluid";
+                document.getElementById("featureImage").appendChild(img);
+            }
+            var description = event.feature.getProperty("description");
+            var monumentInfo = name+description;
+            var details = document.getElementById("moreInfo");
+            details.removeChild(details.childNodes[0]);
+            details.append(monumentInfo);
+            var imageJson = event.feature.getProperty("image");
+            var imageLink = image_function(imageJson, 50, 50);
+            var imageDiv = document.getElementById("featureImage");
+            imageDiv.removeChild(imageDiv.childNodes[0]);
+        });
+
+        //https://developers.google.com/maps/documentation/javascript/examples/marker-simple
+//https://developers.google.com/maps/documentation/javascript/examples/map-geolocation
+//https://developers.google.com/maps/documentation/javascript/custom-markers
+        //https://stackoverflow.com/questions/15096461/resize-google-maps-marker-icon-image
+        //setting map icon to suitable size for map
+
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(function(position) {
+                                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+
+                var icon = {
+                    url: 'https://image.flaticon.com/icons/png/512/34/34343.png', // url
+                    scaledSize: new google.maps.Size(30, 30), // scaled size
+                    origin: new google.maps.Point(0,0), // origin
+                    anchor: new google.maps.Point(0, 0) // anchor
+                };
+
+                //if marker already exists remove when watch position changes
+                if (marker && marker.setMap) {
+                    marker.setMap(null);
+                }
+
+                //then add new marker based on geolocation
+                var marker = new google.maps.Marker({
+                    position : pos,
+                    map: map,
+                    icon: icon
+                });
+                marker.setPosition(pos);
+
+            },);
+        } else {
+            console.log("Geolocation not supported")
+        }
+    }
+
+
+</script>
+<script defer src="./src/js/material.min.js"></script>
+<script src="./src/js/promise.js"></script>
+<script src="./src/js/fetch.js"></script>
+<script src="./src/js/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcR7c04S5Ubb9yciwpfN56ofJwONci0R0&callback=initMap" async defer></script>

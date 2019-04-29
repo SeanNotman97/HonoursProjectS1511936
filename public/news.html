@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kelvingrove</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="./src/css/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Kelvingrove">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyALWNpFjLKj7ntEJbHeXD-RHPYveuLVeHg",
+            authDomain: "reservationdatabase1.firebaseapp.com",
+            databaseURL: "https://reservationdatabase1.firebaseio.com",
+            projectId: "reservationdatabase1",
+            storageBucket: "reservationdatabase1.appspot.com",
+            messagingSenderId: "261378902017"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+</head>
+<body>
+
+<div id="app">
+    <nav style="background-color: #3f51b5;" class="navbar navbar-expand-md fixed-top">
+        <img class="img-fluid" height="40px" width="40px" src="src/images/index/kelvingroveicon.png">   <a style="color: white;" class="navbar-brand" href="index.html">	&nbsp; Kelvingrove Park</a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link" href="activities.html">Activities</a>
+                </li>
+                <li  class="nav-item">
+                    <a style="color: white;" class="nav-link" href="events.html">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="walk.html">Walks</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="news.html">News</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="help.html">Contact Us</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="divID1">
+                <button style="color: white;" class="btn btn-outline-secondary my-2 my-sm-0" type="button" onclick="findInPage();">Search</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+        <main class="container">
+
+            <!-- /.row -->
+
+
+
+            <!-- Trigger the Modal -->
+
+
+
+
+            <!-- Related Projects Row -->
+
+            <h3 class="my-4">News</h3>
+            <hr class="featurette-divider">
+            <div id="article_table">
+            </div>
+
+            <style>
+                #article_table{
+                    list-style: none;
+                    padding: 0.5em 1em;
+                    margin: 0;
+                }
+
+                #article_table li {
+                    font-size: 0.9em;
+                    padding: 0.5em;
+                    background: #FFF;
+                    border-bottom: 1px solid #EEE;
+                    margin: 0.5em 0;
+                }
+
+                body {
+
+                    color: #545454;
+                    background: #F7F7F7;
+                }
+
+            </style>
+
+            <h3 class="my-4">Social Media</h3>
+            <hr class="featurette-divider">
+            <a class="twitter-timeline" data-theme="light" href="https://twitter.com/KelvingrovePark?ref_src=twsrc%5Etfw">Tweets by KelvingrovePark</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+            <!-- /.row -->
+        </main>
+    </div>
+</div>
+<br>
+<a href="#">
+    <img style="display:block;margin-right:auto; margin-left:auto; margin-bottom:25px; height:50px; width:50px;" src="src/images/fad/arrow.png">
+</a>
+
+<script defer src="./src/js/material.min.js"></script>
+<script src="./src/js/promise.js"></script>
+<script src="./src/js/fetch.js"></script>
+<script src="./src/js/app.js"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="reservation.js"></script>
+</body>
+</html>

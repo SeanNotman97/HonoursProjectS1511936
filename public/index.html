@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--Some of the code references throughout this project-->
+
+  <!--https://getbootstrap.com/docs/4.0/examples/carousel/-->
+  <!--https://developers.google.com/maps/documentation/javascript/examples/directions-complex-->
+  <!--https://developers.google.com/maps/documentation/javascript/examples/directions-simple-->
+  <!--https://developers.google.com/maps/documentation/javascript/directions-->
+  <!--https://developers.google.com/web/ilt/pwa/working-with-indexeddb-->
+  <!--https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API-->
+  <!--https://blog.teamtreehouse.com/create-your-own-to-do-app-with-html5-and-indexeddb-->
+  <!--https://greenido.wordpress.com/2012/10/05/how-to-use-indexeddb-simplest-example/-->
+  <!--https://www.youtube.com/watch?v=Se5E4PbOZHc-->
+  <!--https://www.youtube.com/watch?v=RqXXlH3vQ9Q-->
+  <!--https://firebase.google.com/docs-->
+  <!--https://developers.google.com/maps/documentation/javascript/datalayer-->
+  <!--https://gis.stackexchange.com/questions/291303/reading-geojson-file-in-javascript-->
+  <!--GeoJson - learnt from web design-->
+  <!--https://www.sitepoint.com/find-a-route-using-the-geolocation-and-the-google-maps-api/-->
+  <!--https://robertnyman.com/html5/geolocation/current-location-and-directions.html-->
+
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kelvingrove</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="./src/css/app.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Kelvingrove">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="./src/images/icons/park-icon-180x180.png" sizes="180x180">
+  <link rel="stylesheet" type="text/css" href="./src/css/index.css">
+  <meta name="msapplication-TileImage" content="/src/images/icons/park-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+
+  <style>
+    .parallax {
+      background-image: url("src/images/index/heads.jpg");
+      /*https://stirringconstantly.files.wordpress.com/2013/07/smiling-heads.jpg*/
+
+      min-height: 500px;
+
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #bigtitle {
+      text-shadow: 1px 2px 3px #666;
+    }
+
+  </style>
+
+
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <!-- NAV -->
+  <nav style="background-color: #3f51b5;" class="navbar navbar-expand-md fixed-top">
+    <img class="img-fluid" height="40px" width="40px" src="src/images/index/kelvingroveicon.png">   <a style="color: white;" class="navbar-brand" href="index.html">	&nbsp; Kelvingrove Park</a>
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a style="color: white;" class="nav-link" href="activities.html">Activities</a>
+        </li>
+        <li  class="nav-item">
+          <a style="color: white;" class="nav-link" href="events.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a style="color: white;" class="nav-link " href="walk.html">Walks</a>
+        </li>
+        <li class="nav-item">
+          <a style="color: white;" class="nav-link " href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a style="color: white;" class="nav-link " href="help.html">Contact Us</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="divID1">
+        <button style="color: white;" class="btn btn-outline-secondary my-2 my-sm-0" type="button" onclick="findInPage();">Search</button>
+      </form>
+    </div>
+  </nav>
+  <br>
+  <br>
+
+  <!--https://www.w3schools.com/howto/howto_css_parallax.asp-->
+  <div class="parallax">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="bigtitle" style="text-align:center;color:white;">
+      <h1 class="col-sm-12" style="font-size: 500%">Discover Kelvingrove</h1>
+      <p class="col-sm-12" style="font-size: 125%">There's never a shortage of activities around Kelvingrove Park, with history, wildlife, sports, comedy and food all at your fingertips.</p>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="container marketing">
+      <br>
+      <br>
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="src/images/index/todo.png" role="img">
+          <h2>THINGS TO DO</h2>
+          <p>See the wide selection of activities available in and around Kelvingrove.</p>
+          <p><a class="btn btn-secondary" href="activities.html" role="button">Learn More&raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="src/images/index/whatson.png" role="img">
+          <h2>WHATS ON</h2>
+          <p>Experience live music at Kelvingrove bandstand or meet the community at a local cleanup event.</p>
+          <p><a class="btn btn-secondary" href="events.html" role="button">Learn More &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="src/images/index/foot.png" role="img">
+          <h2>WALKS</h2>
+          <p>Find the perfect walk for any occasion, Kelvingrove is very dog friendly. </p>
+          <p><a class="btn btn-secondary" href="walk.html" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!--To do list-->
+      <button data-toggle="modal" data-target="#modal1" class="btn btn-secondary btn-block mt-auto">Show To do List</button>
+
+      <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">My To Do List </h5>
+              <span style="color:silver;margin-left:10px;"> (add more from the Activites page!)</span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+              <div class="modal-body">
+
+                <ul id="toDoList"></ul>
+                <!--<table id="todo-table"></table>-->
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- START THE FEATURETTES -->
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">History of Kelvingrove <span class="text-muted">Discover the past</span></h2>
+          <p class="lead">Learn about Kelvingrove Park's rich 150-year history, from its formation as West End Park to recent restoration and heritage efforts.</p>
+          <p><a class="btn btn-secondary col-sm-12 col-lg-2" href="events.html" role="button">Learn More</a></p>
+
+        </div>
+        <div class="col-md-5">
+          <img src="src/images/index/history.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading"><br>A World Famous Collection <br><span class="text-muted">Only in Glasgow... </span></h2>
+          <!--http://www.whatsonglasgow.co.uk/event/005324-the-rspb-at-kelvingrove/-->
+          <p class="lead">Kelvingrove Art Gallery and Museum is the proud home of some unmissable pieces of art. You can learn more about their history with a private group tour. </p>
+          <p><a class="btn btn-secondary col-sm-12 col-lg-2" href="kmuseum.html#grouptour" role="button">Learn More</a></p>
+
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="src/images/index/dd.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Wild Walks <br><span class="text-muted">A Breath of Fresh Air</span></h2>
+          <!--http://www.whatsonglasgow.co.uk/event/005324-the-rspb-at-kelvingrove/-->
+          <p class="lead">You'll find RSPB Scotland holding family friendly events most weekends and during the school holidays at Kelvingrove Art Gallery and Museum! Learn more about protecting local wildlife at the Wildlife Explorer's club.</p>
+          <p><a class="btn btn-secondary col-sm-12 col-lg-2" href="events.html" role="button">Learn More</a></p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="src/images/index/bird.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title>
+        </div>
+      </div>
+
+
+
+
+
+</div><!-- /.container -->
+
+
+
+
+
+<br>
+    <!-- FOOTER -->
+    <footer class="container">
+      <a href="#">
+        <img style="display:block;margin-right:auto; margin-left:auto; margin-bottom:25px; height:50px; width:50px;" src="src/images/fad/arrow.png">
+      </a>
+      <a href="https://twitter.com/intent/tweet?button_hashtag=kelvingrove&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-show-count="false">Tweet #kelvingrove</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </p>
+    </footer>
+  </main>
+</div>
+</main>
+</div>
+
+
+
+<script src="./src/js/promise.js"></script>
+<script src="./src/js/fetch.js"></script>
+<script src="./src/js/app.js"></script>
+
+<!--Scripts for to do list-->
+<script src="./src/js/todo/todoDB.js"></script>
+<script src="./src/js/todo/todo.js"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

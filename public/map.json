@@ -1,0 +1,231 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -4.281615614891052,
+            55.87036304096378
+          ],
+          [
+            -4.281819462776184,
+            55.87016740352042
+          ],
+          [
+            -4.282245934009552,
+            55.8699491913632
+          ],
+          [
+            -4.2823585867881775,
+            55.86989200452612
+          ],
+          [
+            -4.282688498497009,
+            55.86952781269322
+          ],
+          [
+            -4.28267240524292,
+            55.8690447265213
+          ],
+          [
+            -4.282463192939758,
+            55.868701596244705
+          ],
+          [
+            -4.282479286193848,
+            55.86851197031757
+          ],
+          [
+            -4.282549023628235,
+            55.86840361222925
+          ],
+          [
+            -4.282597303390503,
+            55.868376522659915
+          ],
+          [
+            -4.28292453289032,
+            55.8683494330717
+          ],
+          [
+            -4.2832356691360465,
+            55.868379532613005
+          ],
+          [
+            -4.28341805934906,
+            55.8685179902025
+          ],
+          [
+            -4.2836326360702515,
+            55.8685781890005
+          ],
+          [
+            -4.284126162528992,
+            55.86852100014462
+          ],
+          [
+            -4.28467869758606,
+            55.86831632354935
+          ],
+          [
+            -4.284871816635132,
+            55.86839759232659
+          ],
+          [
+            -4.285188317298888,
+            55.86843371172854
+          ],
+          [
+            -4.285585284233093,
+            55.86856012937091
+          ],
+          [
+            -4.286330938339233,
+            55.86881898325944
+          ],
+          [
+            -4.287012219429016,
+            55.86903870671803
+          ],
+          [
+            -4.286518692970276,
+            55.86973398782797
+          ],
+          [
+            -4.286223649978638,
+            55.87014633481389
+          ],
+          [
+            -4.286009073257446,
+            55.87014633481389
+          ],
+          [
+            -4.285687208175659,
+            55.87032692335612
+          ],
+          [
+            -4.2854297161102295,
+            55.87042323690196
+          ],
+          [
+            -4.285064935684203,
+            55.870465374003146
+          ],
+          [
+            -4.284764528274536,
+            55.8704412956652
+          ],
+          [
+            -4.284142255783081,
+            55.870302844932326
+          ],
+          [
+            -4.283511936664581,
+            55.87051052084653
+          ],
+          [
+            -4.28317129611969,
+            55.87081751798975
+          ],
+          [
+            -4.282747507095337,
+            55.87112752244622
+          ],
+          [
+            -4.282189607620239,
+            55.87142849527906
+          ],
+          [
+            -4.281556606292725,
+            55.87166927186587
+          ],
+          [
+            -4.28140640258789,
+            55.871618106966096
+          ],
+          [
+            -4.281620979309082,
+            55.87130208697341
+          ],
+          [
+            -4.2817604541778564,
+            55.87105227887355
+          ],
+          [
+            -4.2817604541778564,
+            55.870784410571446
+          ],
+          [
+            -4.281615614891052,
+            55.870378089957086
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name":"Lord Roberts Monument",
+        "image":"./src/images/statues/lord.jpg",
+        "description":"The bronze monument, which dates from 1916, shows Lord Roberts mounted on a horse. There are relief carvings of soldiers and horse-drawn wagons below. The statue, by sculptor Henry Poole, is a duplicate of a statue erected in Calcutta, sculpted by Harry Bates.\n\nLord Frederick Sleigh Roberts, of Khandahar, Pretoria and Waterford made his reputation as a soldier and national hero in the colonial wars of India and Afghanistan, and in the Boer War in South Africa. He was awarded the freedom of the city and, on his death in 1914, Glasgow Corporation launched a memorial fund to pay for the statue."
+
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.281857013702393,
+          55.87032090375159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name":"Tigress and Cubs",
+        "image":"./src/images/statues/tigress.jpg",
+        "description":"Auguste-Nicolas Cain's \"Bengal Tigress\" (also known as \"Tigress and Cubs,\" \"Tigress and Peacock\", \"Lioness\" and the \"Kennedy Monument\"), stands atop a red granite pedestal designed by John Mossman and was unveiled in the park in 1867 — the same year in which a copy was donated to Central Park in New York City.\nKelvingrove's version was the gift of a son of Glasgow, John Stewart Kennedy, who had immigrated to New York and made his fortune. Whilst on a visit to Paris in 1866, Kennedy visited Cain's studio and was so impressed by this work in progress (for the 1867 Paris Exhibition) that he ordered a copy for his native city and donated it to the Corporation. "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.28242564201355,
+          55.86841866198181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name":"Statue of Lord Kelvin",
+        "image":"./src/images/statues/kelvin.jpg",
+        "description":"Glasgow University is one of the most interesting places to visit and in a small garden below the University Tower you will find the Lord Kelvin Statue.\n\nThe statue was erected on this site in 1913 and was the work of Archibald MacFarlane Shannan, who was commissioned to immortalise Sir William Thomson, 1st Baron Kelvin of Largs, in bronze."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.2870658636093145,
+          55.86973398782796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name":"Statue of Thomas Carlyle",
+        "image":"./src/images/statues/carlyle.jpg",
+        "description":"Thomas Carlyle. Sculpted out of three massive blocks of grey granite by Glasgow artist William Kellock Brown, this unusual bust has Carlyle's head, shoulders and arms emerging nobly from the coarsely cleft stone. Although the Dumfriesshire-born and Chelsea-based writer died in 1881, it was not until 1911 that the memorial was commissioned (and was not unveiled for another five years). Carlyle was one of 19th-century Britain's most influential writers and commentators, best known for his translations of the German Romantics, his history of the French Revolution, his biographies of Cromwell and Frederick the Great, and his essays on Chartism and the Reform Act. "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.285150562991362,
+          55.87048680760291
+        ]
+      }
+    }
+  ]
+}

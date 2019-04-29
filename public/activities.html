@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kelvingrove</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="./src/css/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Kelvingrove">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="./src/images/icons/apple-icon-180x180.png" sizes="180x180">
+
+    <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+
+    <style>
+        body {
+
+            color: #545454;
+            background: #F7F7F7;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!-- NAV -->
+    <nav style="background-color: #3f51b5;" class="navbar navbar-expand-md fixed-top">
+        <img class="img-fluid" height="40px" width="40px" src="src/images/index/kelvingroveicon.png">   <a style="color: white;" class="navbar-brand" href="index.html">	&nbsp; Kelvingrove Park</a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link" href="activities.html">Activities</a>
+                </li>
+                <li  class="nav-item">
+                    <a style="color: white;" class="nav-link" href="events.html">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="walk.html">Walks</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="news.html">News</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white;" class="nav-link " href="help.html">Contact Us</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="divID1">
+                <button style="color: white;" class="btn btn-outline-secondary my-2 my-sm-0" type="button" onclick="findInPage();">Search</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+
+        <main class="container">
+
+
+
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <div class="btn-group">
+                <label class="btn btn-secondary">
+                    <button type="button" class="btn btn-secondary" id="option1">All</button>
+                </label>
+                <label class="btn btn-secondary">
+                    <button type="button" class="btn btn-secondary" id="option2">Food</button>
+                </label>
+
+                <label class="btn btn-secondary">
+                    <button type="button" class="btn btn-secondary" id="option3">Landmarks</button>
+                </label>
+
+                <label class="btn btn-secondary">
+                    <button type="button" class="btn btn-secondary" id="option4">Activities</button>
+                </label>
+            </div>
+
+
+
+
+
+
+            <!-- Bootstrap card deck of activities -->
+            <div class="card-deck">
+                <div class="card" id="card1" style="margin-bottom: 10px">
+                    <img class="card-img-top" src="./src/images/fad/an-clachan-cafe.jpg" alt="Card image cap">
+                    <!--https://media-cdn.tripadvisor.com/media/photo-s/02/6b/ac/29/an-clachan-cafe.jpg-->
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">An Clachan Cafe</h5>
+                        <p class="card-text">Bright and welcoming cafe serving coffee, tea, cake and sandwiches.</p>
+                        <p class="card-text"><small class="text-muted">South East Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='cafe1.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="clach_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+
+                    </div>
+                </div>
+                <div class="card" id="card2" style="margin-bottom: 10px">
+                    <img class="card-img-top" src="./src/images/fad/brew.jpg" alt="Card image cap">
+                    <!--https://media.timeout.com/images/101765597/630/472/image.jpg                    -->
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Brewdog</h5>
+                        <p class="card-text">Friendly pub serving food and high quality in-house beer.</p>
+                        <p class="card-text"><small class="text-muted">West of Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='brewdog.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="brew_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+                    </div>
+                </div>
+                <div class="card" id="card3" style="margin-bottom: 10px">
+                    <img class="card-img-top" src="./src/images/fad/inndeep.jpg" alt="Card image cap">
+                    <!--http://foodanddrink.scotsman.com/wp-content/uploads/2017/01/InnDeep.jpg-->
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Inn Deep</h5>
+                        <p class="card-text">Trendy, dog friendly bar with a wide variety of beers and ales.</p>
+                        <p class="card-text"><small class="text-muted">East of Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='inndeep.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="deep_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="landmarks" class="card-deck">
+                <div class="card" id="card4" style="margin-bottom: 10px">
+                    <img class="card-img-top" src="./src/images/fad/museum.jpg" alt="Card image cap">
+                    <!--https://www.visitscotland.com/wsimgs/visitscotland_26490515450_1136090245.jpg-->
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Kelvingrove Museum</h5>
+                        <p class="card-text">Impressive Edwardian era museum and art gallery. Open free to the public year round.</p>
+                        <p class="card-text"><small class="text-muted">South West of Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='kmuseum.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="museum_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+
+                    </div>
+                </div>
+                <div class="card" id="card5" style="margin-bottom: 10px">
+                    <img class="card-img-top" src="./src/images/fad/stewartfountain.jpg" alt="Card image cap">
+                    <!--https://pbs.twimg.com/media/DhrrEpIWkAEWhdM.jpg-->
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Stewart Memorial Fountain</h5>
+                        <p class="card-text">Impressive 1872 fountain situated in the middle of the park.</p>
+                        <p class="card-text"><small class="text-muted">Central Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='fountain.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="fountain_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+
+                    </div>
+                </div>
+                <div class="card" id="card6" style="margin-bottom: 10px">
+                    <!--https://www.whatsonnetwork.co.uk/uploads/800x600/2c58ac3ef191c9e1bc1e8b2e6a145420.jpg-->
+                    <img class="card-img-top" src="./src/images/fad/bandstand.jpg" alt="Card image cap">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Kelvingrove Bandstand and Ampitheatre</h5>
+                        <p class="card-text">Recently renovated outdoor music venue. Home to the Glasgow Summer Sessions every August.</p>
+                        <p class="card-text"><small class="text-muted">Central Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='bandstand.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="band_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-deck">
+                <div class="card" id="card7" style="margin-bottom: 10px">
+                    <!--https://media.timeout.com/images/102763488/image.jpg-->
+                    <img class="card-img-top" src="./src/images/fad/stand.jpg" alt="Card image cap">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">The Stand Comedy Club</h5>
+                        <p class="card-text">Popular comedy club featuring local and visiting comedy talent. Casual atmosphere.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Central Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='thestand.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="stand_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+
+                    </div>
+                </div>
+                <div class="card" id="card8" style="margin-bottom: 10px">
+                    <!--http://2.bp.blogspot.com/-mdD1cIfwWk0/UuKyTbl0tlI/AAAAAAAAFuw/XofjjLQZwUg/s1600/DSC_0015.JPG-->
+                    <img class="card-img-top" src="src/images/fad/lawn.jpg" alt="Card image cap">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Kelvingrove Lawn Bowls and Tennis Centre</h5>
+                        <p class="card-text">Casual and well equipped facilities for lawn bowls and tennis. Recently renovated.</p>
+                        <p class="card-text"><small class="text-muted">West Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='tennis.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="lawn_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+
+                    </div>
+                </div>
+                <div class="card" id="card9" style="margin-bottom: 10px">
+                    <!--https://satsumaart.files.wordpress.com/2012/06/dscn3341.jpg-->
+                    <img class="card-img-top" src="./src/images/fad/skatepark.jpg" alt="Card image cap">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Kelvingrove Skatepark</h5>
+                        <p class="card-text">Popular skatepark situated in the centre of the park.</p>
+                        <p class="card-text"><small class="text-muted">Central Kelvingrove</small></p>
+                        <button type="button" onclick="window.location.href='skatepark.html'" class="btn btn-secondary btn-lg btn-block mt-auto">More Info</button>
+                        <button type="button" class="btn btn-block btn-outline-primary" id="skate_todo" style="vertical-align: middle;padding:20px;"> Add to my To Do List! </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <button data-toggle="modal" data-target="#modal1" class="btn btn-secondary btn-block mt-auto">Show To do List</button>
+
+            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">My To Do List </h5>
+                            <span style="color:silver;margin-left:10px;"> (add more from the Activites page!)</span>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+
+                                <ul id="toDoList"></ul>
+                                <!--<table id="todo-table"></table>-->
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+<br>
+
+            <a href="#">
+                <img style="display:block;margin-right:auto; margin-left:auto; margin-bottom:25px; height:50px; width:50px;" src="src/images/fad/arrow.png">
+            </a>
+            <script>
+
+                <!-- These functions filter through the activities to hide and show the cards based upon users selection -->
+
+                $( "#option1" ).click(function() {
+                    $("#card1").show();
+                    $("#card2").show();
+                    $("#card3").show();
+                    $("#card4").show();
+                    $("#card5").show();
+                    $("#card6").show();
+                    $("#card7").show();
+                    $("#card8").show();
+                    $("#card9").show();
+                });
+            </script>
+
+            <script>
+                $("#option2").click(function(){
+                    $("#card1").show();
+                    $("#card2").show();
+                    $("#card3").show();
+                    $("#card4").hide();
+                    $("#card5").hide();
+                    $("#card6").hide();
+                    $("#card7").hide();
+                    $("#card8").hide();
+                    $("#card9").hide();
+                });
+            </script>
+
+            <script>
+                $("#option3").click(function(){
+                    $("#card1").hide();
+                    $("#card2").hide();
+                    $("#card3").hide();
+                    $("#card4").show();
+                    $("#card5").show();
+                    $("#card6").show();
+                    $("#card7").hide();
+                    $("#card8").hide();
+                    $("#card9").hide();
+                });
+            </script>
+
+            <script>
+                $("#option4").click(function(){
+                    $("#card1").hide();
+                    $("#card2").hide();
+                    $("#card3").hide();
+                    $("#card4").hide();
+                    $("#card5").hide();
+                    $("#card6").hide();
+                    $("#card7").show();
+                    $("#card8").show();
+                    $("#card9").show();
+                });
+            </script>
+
+
+
+
+
+        </main>
+    </div>
+</div>
+
+<script src="./src/js/promise.js"></script>
+<script src="./src/js/fetch.js"></script>
+<script src="./src/js/app.js"></script>
+
+<!--Scripts for to do list-->
+<script src="src/js/todo/todoDB.js"></script>
+<script src="./src/js/todo/todo.js"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
